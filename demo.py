@@ -17,6 +17,8 @@ end = time.time()
 print('Rendering silhouette took {:.03f} seconds for image of size {}x{}'.format((end - start) * 1, p_xmax, p_ymax))
 plt.imshow(image.permute(1, 0))
 plt.show()
+plt.imshow(image.permute(1, 0))
+plt.savefig('results/sphere_silhouette.png')
 
 # Render normals
 start = time.time()
@@ -25,4 +27,6 @@ end = time.time()
 print('Rendering normals took {:.03f} seconds for image of size {}x{}'.format((end - start) * 1, p_xmax, p_ymax))
 plt.imshow((image.permute(2, 1, 0) + 1) / 2)
 plt.show()
+plt.imshow((image.permute(2, 1, 0) + 1) / 2)
+plt.savefig('results/sphere_normal.png')
 
